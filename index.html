@@ -3,70 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restoran Tradicija | Premium Balkanska Kuhinja</title>
-    <!-- Google Fonts: Display Serif & Clean Sans -->
+    <title>Restoran Tradicija | Premium Gastronomija & Ambijent</title>
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- SVG Filter za Signature Smoke Reveal Efekat -->
-    <svg class="smoke-filter-svg" style="position: absolute; width: 0; height: 0;">
-        <defs>
-            <filter id="smoke-reveal">
-                <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="4" result="noise" />
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" id="smoke-displacement" />
-            </filter>
-        </defs>
-    </svg>
+    <!-- Luksuzni Custom Kurzor (Avenue Caffe stil) -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
 
-    <!-- Header / Navigacija -->
+    <!-- Fiksna Premium Navigacija -->
     <header class="site-header">
-        <div class="logo">TRADICIJA</div>
+        <a href="#" class="logo">TRADICIJA<span>.</span></a>
         <nav class="main-nav">
+            <a href="#o-nama" class="nav-link">O nama</a>
             <a href="#meni" class="nav-link">Meni</a>
-            <a href="#ambijent" class="nav-link">Ambijent</a>
-            <button class="btn-reserve">Rezervišite sto</button>
+            <a href="#galerija" class="nav-link">Ambijent</a>
+            <a href="#kontakt" class="nav-link btn-reserve">Rezervacije</a>
         </nav>
     </header>
 
-    <!-- Hero Sekcija -->
+    <!-- HERO SEKCIJA: Asimetrični split sa glatkim reveal-om -->
     <section class="hero">
-        <div class="hero-content">
-            <h1 class="smoke-text">Njegovano vremenom.<br>Spremano pod sačem.</h1>
-            <p class="hero-sub">Okusite esenciju balkanskog kulinarskog nasleđa kroz premium interpretaciju tradicionalnih jela.</p>
-            <a href="#meni" class="hero-cta">Istraži Meni</a>
+        <div class="hero-container">
+            <div class="hero-text-side">
+                <span class="eyebrow" style="opacity:0;">Premium Balkanski Ukusi</span>
+                <h1 class="split-text">Njegovano<br><span class="italic-serif">vremenom.</span><br>Spremano pod sačem.</h1>
+                <p class="hero-sub" style="opacity:0;">Spoj autentičnog etno-karaktera drveta i vrhunske gurmanske tradicije pretočen u moderno kulinarsko iskustvo.</p>
+                <div class="hero-actions" style="opacity:0;">
+                    <a href="#meni" class="cta-primary">Istražite Meni</a>
+                    <a href="#galerija" class="cta-secondary">Pogledajte Ambijent</a>
+                </div>
+            </div>
+            <div class="hero-image-side">
+                <div class="main-hero-img-wrapper">
+                    <!-- Slika enterijera sa masivnim gredama i toplim lusterima -->
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="Restoran Tradicija Enterijer" class="hero-reveal-img">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Meni Sekcija -->
+    <!-- O NAMA SEKCIJA: Elegantni magazin layout -->
+    <section id="o-nama" class="about-section">
+        <div class="about-grid">
+            <div class="about-img-box trigger-parallax">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop" alt="Spremanje ispod sača" class="parallax-img">
+            </div>
+            <div class="about-text-box">
+                <span class="eyebrow">Istorija iza ukusa</span>
+                <h2 class="section-title">Gde se spajaju tradicija i luksuz</h2>
+                <p class="section-desc">Naša priča je satkana od mirisa bukovog drveta, toplote masivnog sača i gostoprimstva koje se pamti. Unutrašnjost našeg prostora balansira između sirovog šarma etno-brvnare i prefinjenog dizajna modernih restorana, stvarajući savršeno utočište za istinske hedoniste.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- REKONSTRUISANI INTERAKTIVNI MENI -->
     <section id="meni" class="menu-section">
-        <div class="section-title-wrap">
-            <span class="eyebrow">Autentično iskustvo</span>
-            <h2 class="section-title">Rekonstruisani Meni</h2>
-        </div>
+        <div class="container">
+            <div class="menu-header">
+                <span class="eyebrow">Ručno birani sastojci</span>
+                <h2 class="section-title">Kulinarsko Nasleđe</h2>
+                
+                <!-- Premium Kategorije (GSAP Filter) -->
+                <div class="menu-filters">
+                    <button class="filter-btn active" data-cat="sac">Sač & Pečenje</button>
+                    <button class="filter-btn" data-cat="rostilj">Roštilj</button>
+                    <button class="filter-btn" data-cat="dorucak">Doručak</button>
+                    <button class="filter-btn" data-cat="predjela">Predjela & Salate</button>
+                </div>
+            </div>
 
-        <!-- Dinamički Filteri kategorija -->
-        <div class="menu-categories">
-            <button class="cat-btn active" data-category="sac">Pečenje & Sač</button>
-            <button class="cat-btn" data-category="rostilj">Roštilj</button>
-            <button class="cat-btn" data-category="dorucak">Doručak</button>
-            <button class="cat-btn" data-category="predjela">Predjela & Salate</button>
-            <button class="cat-btn" data-category="pica">Vina & Rakije</button>
-        </div>
-
-        <!-- Meni Grid sa stavkama -->
-        <div class="menu-grid" id="menu-container">
-            <!-- Stavke se dinamički generišu iz JS-a zarad lakšeg održavanja i čistog koda -->
+            <!-- Meni Grid -->
+            <div class="menu-grid" id="dynamic-menu">
+                <!-- Generiše se automatski preko JS-a -->
+            </div>
         </div>
     </section>
 
-    <!-- GSAP i ScrollTrigger sa CDN-a -->
+    <!-- GALERIJA SEKCIJA: Horizontalni Scroll (Dardaneli & Avenue Efekat) -->
+    <section id="galerija" class="gallery-section">
+        <div class="gallery-sticky-wrapper">
+            <div class="gallery-title-side">
+                <span class="eyebrow">Fotogalerija</span>
+                <h2 class="section-title">Uhvaćeni<br>Trenuci</h2>
+                <p>Skrolujte da biste istražili naš prostor i specijalitete.</p>
+            </div>
+            <div class="gallery-slider">
+                <!-- Ovde vizuelno mapiramo ambijente sa tvojih slika -->
+                <div class="gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="Premium jelo">
+                    <h3>Gurmanska Tradicija</h3>
+                </div>
+                <div class="gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop" alt="Topli enterijer drvo">
+                    <h3>Masivne Drvene Grede</h3>
+                </div>
+                <div class="gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop" alt="Atmosfera živa muzika">
+                    <h3>Ambijentalni Lusteri</h3>
+                </div>
+                <div class="gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=800&auto=format&fit=crop" alt="Premium jelo 2">
+                    <h3>Dimljena Butkica</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT & REZERVACIJE -->
+    <section id="kontakt" class="contact-section">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <span class="eyebrow">Lokacija & Kontakt</span>
+                <h2 class="section-title">Posetite nas</h2>
+                <div class="info-item">
+                    <h5>Adresa</h5>
+                    <p>Autentična lokacija, Beograd, Srbija</p>
+                </div>
+                <div class="info-item">
+                    <h5>Telefon za rezervacije</h5>
+                    <p>+381 11 XXX XXXX</p>
+                </div>
+                <div class="info-item">
+                    <h5>Radno Vreme</h5>
+                    <p>Ponedeljak - Nedelja: 08:00 - 00:00</p>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <h3 class="form-title">On-line Rezervacija stola</h3>
+                <form id="res-form" onsubmit="event.preventDefault();">
+                    <div class="form-row">
+                        <input type="text" placeholder="Vaše Ime" required>
+                        <input type="tel" placeholder="Broj Telefona" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="number" placeholder="Broj Osoba" min="1" required>
+                        <input type="datetime-local" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Rezervišite odmah</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Restoran Tradicija. Sva prava zadržana. Crafted with opinionated frontend architecture.</p>
+    </footer>
+
+    <!-- GSAP Core i ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
-
