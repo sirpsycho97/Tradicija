@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran Tradicija | Premium Balkanska Kuhinja</title>
+    <!-- Google Fonts: Display Serif & Clean Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SVG Filter za Signature Smoke Reveal Efekat -->
+    <svg class="smoke-filter-svg" style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="smoke-reveal">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="4" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" id="smoke-displacement" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Header / Navigacija -->
+    <header class="site-header">
+        <div class="logo">TRADICIJA</div>
+        <nav class="main-nav">
+            <a href="#meni" class="nav-link">Meni</a>
+            <a href="#ambijent" class="nav-link">Ambijent</a>
+            <button class="btn-reserve">Rezervišite sto</button>
+        </nav>
+    </header>
+
+    <!-- Hero Sekcija -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="smoke-text">Njegovano vremenom.<br>Spremano pod sačem.</h1>
+            <p class="hero-sub">Okusite esenciju balkanskog kulinarskog nasleđa kroz premium interpretaciju tradicionalnih jela.</p>
+            <a href="#meni" class="hero-cta">Istraži Meni</a>
+        </div>
+    </section>
+
+    <!-- Meni Sekcija -->
+    <section id="meni" class="menu-section">
+        <div class="section-title-wrap">
+            <span class="eyebrow">Autentično iskustvo</span>
+            <h2 class="section-title">Rekonstruisani Meni</h2>
+        </div>
+
+        <!-- Dinamički Filteri kategorija -->
+        <div class="menu-categories">
+            <button class="cat-btn active" data-category="sac">Pečenje & Sač</button>
+            <button class="cat-btn" data-category="rostilj">Roštilj</button>
+            <button class="cat-btn" data-category="dorucak">Doručak</button>
+            <button class="cat-btn" data-category="predjela">Predjela & Salate</button>
+            <button class="cat-btn" data-category="pica">Vina & Rakije</button>
+        </div>
+
+        <!-- Meni Grid sa stavkama -->
+        <div class="menu-grid" id="menu-container">
+            <!-- Stavke se dinamički generišu iz JS-a zarad lakšeg održavanja i čistog koda -->
+        </div>
+    </section>
+
+    <!-- GSAP i ScrollTrigger sa CDN-a -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
