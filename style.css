@@ -1,0 +1,240 @@
+/* Token Sistem iz Frontend Design Smernica */
+:root {
+    --smoked-oak: #0E0B0A;     /* Duboka, organska tamna pozadina */
+    --brushed-brass: #D4B26F;  /* Topli, premium zlatni akcenti i cene */
+    --raw-linen: #F5F2EB;      /* Kontrastni off-white tekst za čitljivost */
+    --charred-timber: #261E1A; /* Separatori i pozadine kartica */
+    
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Reset i bazični stilovi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--smoked-oak);
+    color: var(--raw-linen);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4%;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: var(--brushed-brass);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav-link {
+    color: var(--raw-linen);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--brushed-brass);
+}
+
+.btn-reserve {
+    background: transparent;
+    border: 1px solid var(--brushed-brass);
+    color: var(--brushed-brass);
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-reserve:hover {
+    background: var(--brushed-brass);
+    color: var(--smoked-oak);
+}
+
+/* Hero Sekcija */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 750px;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.hero-sub {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: rgba(245, 242, 235, 0.75);
+    margin-bottom: 2.5rem;
+    max-width: 550px;
+}
+
+.hero-cta {
+    display: inline-block;
+    color: var(--smoked-oak);
+    background: var(--brushed-brass);
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+}
+
+.hero-cta:hover {
+    transform: translateY(-3px);
+}
+
+/* Meni Sekcija */
+.menu-section {
+    padding: 8rem 4%;
+    border-top: 1px solid var(--charred-timber);
+}
+
+.section-title-wrap {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--brushed-brass);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+/* Kategorije */
+.menu-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+}
+
+.cat-btn {
+    background: transparent;
+    border: 1px solid var(--charred-timber);
+    color: rgba(245, 242, 235, 0.6);
+    padding: 0.75rem 2rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cat-btn:hover, .cat-btn.active {
+    border-color: var(--brushed-brass);
+    color: var(--brushed-brass);
+    background: rgba(212, 178, 111, 0.05);
+}
+
+/* Meni Grid & Stavke */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 100%));
+    gap: 3rem 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(38, 30, 26, 0.5);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.item-main-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.item-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.item-leader {
+    flex-grow: 1;
+    border-bottom: 1px dotted rgba(212, 178, 111, 0.25);
+    margin: 0 1rem;
+    margin-bottom: 0.4rem;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.item-price {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--brushed-brass);
+    white-space: nowrap;
+}
+
+.item-description {
+    font-size: 0.9rem;
+    color: rgba(245, 242, 235, 0.6);
+    line-height: 1.5;
+}
+
